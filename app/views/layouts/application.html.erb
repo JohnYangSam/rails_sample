@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SampleApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Sample App | <%= yield(:title) %></title>
+    <!-- The two tags below include the application stylesheet and JavaScript -->
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <!-- Prevents cross site forgery (a web attack) -->
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <!-- This yield statement below is where the home.html.erb contents, etc. 
+    are placed -->
+    <%= yield %>
+  </body>
 </html>
