@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sample App | <%= yield(:title) %></title>
+    <!-- The below executes full_title which takes in a special
+      sub title. If not subtitle is defined, then it returns a
+      defaul title -->
+    <title><%= full_title(yield(:title)) %></title>
     <!-- The two tags below include the application stylesheet and JavaScript -->
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
