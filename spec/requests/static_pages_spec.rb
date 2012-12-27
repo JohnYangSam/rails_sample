@@ -4,6 +4,25 @@ describe "Static pages" do
 
   let(:base_title) {"Sample App"};
 
+  # Test the layout links
+  it "should have the right links on the layout" do
+      visit root_path;
+      click_link "About";
+      page.should have_selector 'title', text: full_title('About Us');
+      click_link "Help";
+      page.should have_selector 'title', text: full_title('Help');
+      click_link "Contact";
+      page.should have_selector 'title', text: full_title('Contact');
+      click_link "Home";
+      page.should have_selector 'title', text: full_title('');
+      page.should_not have_selector 'title', text: "| Home";
+      click_link "Sign up now!";
+      page.should have_selector 'title', text: full_title('Sign up');
+      click_link 'sample app';
+      page.should have_selector 'title', text: full_title('');
+      page.should_not have_selector 'title', text: "| Home";
+    end
+
   subject { page }
   describe "Home page" do                         #Tells the user what we are describing
     before { visit root_path } # this lets us avoid repetition of visit root_path under each "it...do"
@@ -12,7 +31,8 @@ describe "Static pages" do
                               :text => "Ruby on Rails Tutorial #{base_title}"); } #Hash with symbol as a key
                                                               #substrings work here as well
     it { should_not have_selector('title', :text => " | Home"); }
-  end
+
+    end
 
   describe "Help page" do
 
