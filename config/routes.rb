@@ -6,10 +6,13 @@ SampleApp::Application.routes.draw do
   # get 'static_pages/about'
   # get 'static_pages/contact'
 
+  get "users/new"
 
   #instead of match '/', to: "static_pages#home" we can do the following
   root(:to => 'static_pages#home'); 
   
+  match '/signup', to: 'users#new'
+
   # Same as get('/help', :to => 'static_pages#help')
   # This also creates a named route help_path
   match '/help', to: 'static_pages#help' 
