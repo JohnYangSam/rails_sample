@@ -8,6 +8,18 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ * The two below css comments are actually commands for the manifest file.
+ *
+ * The first includes the application.css file itself
+ * The second includes all CSS files in the app/assets/stylesheets directory
+ * including tree subdirectores.
+ *
+ * The RoR asset pipeline runs everything through pre-processors based on the file endings like .scss,
+ * .js, .erb, etc. (and you can combine endings).
+ *
+ * The minified results of all processes sheets and scripts are placed in application.css and 
+ * javascripts.js.
+ *
  *= require_self
  *= require_tree .
  */

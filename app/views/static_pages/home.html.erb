@@ -1,3 +1,12 @@
-<h1>Sample App</h1>
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="center hero-unit">
+  <h1>Welcome to the Sample App</h1>
+  <h2>
+    This is the home page for the rails sample application
+    stored in StaticPages#home
+    Find me in app/views/static_pages/home.html.erb
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+</div>
+<!-- First is the text or picture piece. The second is the link for the anchor -->          
+<%= link_to(image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/') %>

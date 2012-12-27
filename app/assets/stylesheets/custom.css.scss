@@ -1,0 +1,115 @@
+@import 'bootstrap';
+
+/* universal */
+html {
+  overflow-y: scroll; /* This could also be 'hidden' etc. */
+}
+
+/* Padding offsets text from the top of the 
+ * screen in the nav bar. navbar-inverse makes the black color.
+ */
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  /* center text */
+  text-align: center;
+
+  /* Sass allows for nesting of CSS */
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+/* Sass variables */
+$lightGrey: #999;
+
+/* Less uses the @ sign instead of the $ sign for variables 
+ so from the gem 'bootstrap-sass' there should be a corresponding
+ SCSS variable $grayLight from @grayLight in bootstrap */
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $lightGrey;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff; /* #fff is shorthand for #ffffff */
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+
+  /* Another example of Sass nesting 
+   "&" references the parent element */
+  &:hover {
+    color:#236B8E;
+    text-decoration: none;
+  }
+}
+
+/* footer - a very good example of Sass nesting */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $lightGrey;
+  
+  a {
+    color: #555;
+    
+    &:hover {
+      color: #222;
+    }
+  }
+
+  /* The <small> tag defines smaller text and aside comments */
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
