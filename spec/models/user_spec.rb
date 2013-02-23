@@ -120,7 +120,7 @@ describe User do
     before { @user.save }
     # Sets the found_user symbol to holder the user we saved
     let(:found_user) { User.find_by_email(@user.email) }
-    
+
     describe "with valid password" do
       it { should == found_user.authenticate(@user.password) }
     end
