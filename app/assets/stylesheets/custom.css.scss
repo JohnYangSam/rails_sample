@@ -1,6 +1,15 @@
 @import 'bootstrap';
 
 /* universal */
+
+/* Sass variables, mixins, etc. */
+$lightGrey: #999;
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   overflow-y: scroll; /* This could also be 'hidden' etc. */
 }
@@ -34,9 +43,6 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
-
-/* Sass variables */
-$lightGrey: #999;
 
 /* Less uses the @ sign instead of the $ sign for variables 
  so from the gem 'bootstrap-sass' there should be a corresponding
@@ -112,4 +118,14 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45;
+  @include box_sizing;
 }

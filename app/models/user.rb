@@ -1,16 +1,17 @@
-# The commenting is created with
-# bundle exec annotate (using the annotate gem)
 # == Schema Information
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string(255)
 #
 
+# The commenting is created with
+# bundle exec annotate (using the annotate gem)
 class User < ActiveRecord::Base
   attr_accessible(:email, :name, :password, :password_confirmation);
 
@@ -19,7 +20,7 @@ class User < ActiveRecord::Base
   before_save { |user| user.email = email.downcase(); }
 
   validates(:name, presence: true, length: { maximum: 50 } );
-  
+
   # regex notes;
   # \A matches the beginning of a string
   # w+ matches word characters
@@ -39,7 +40,7 @@ class User < ActiveRecord::Base
   # the database side as well through creating a new migration:
   #
   # rails generate migration add_index_to_users_email
-  
+
   validates(:password, presence: true, length: { minimum: 6 });
   validates :password_confirmation, presence: true;
 

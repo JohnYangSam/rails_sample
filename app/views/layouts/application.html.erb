@@ -22,6 +22,8 @@
       <!-- This yield statement below is where the home.html.erb contents, etc. 
       are placed -->
       <%= yield %>
+      <!-- Debug information -->
+      <%= debug(params) if Rails.env.development?() %>
     </div>
     <%=  render 'layouts/footer' %>
   </body>

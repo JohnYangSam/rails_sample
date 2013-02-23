@@ -1,16 +1,16 @@
 SampleApp::Application.routes.draw do
-
   # Orginal style routes
   # get "static_pages/home"
   # get "static_pages/help"
   # get 'static_pages/about'
   # get 'static_pages/contact'
 
-  get "users/new"
+  resources :users
+  #get "users/new"
 
   #instead of match '/', to: "static_pages#home" we can do the following
   root(:to => 'static_pages#home'); 
-  
+
   match '/signup', to: 'users#new'
 
   # Same as get('/help', :to => 'static_pages#help')
@@ -18,7 +18,7 @@ SampleApp::Application.routes.draw do
   match '/help', to: 'static_pages#help' 
   match '/about', :to => 'static_pages#about'
   # matches the '/contact' ROUTE to the about ACTION in the static pages CONTROLLER
-  # and automatically creates named routes for the controller of 
+  # and automatically creates named routes for the controller of
   # contact_path - for the relative path
   # contact_url  - for the full url
   get   '/contact', to: 'static_pages#contact'
